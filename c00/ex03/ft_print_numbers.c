@@ -6,10 +6,9 @@
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 13:43:31 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/05/19 14:51:53 by jvan-den         ###   ########.fr       */
+/*   Updated: 2022/05/22 15:08:14 by justin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
 void	ft_print_numbers(void)
@@ -22,9 +21,7 @@ void	ft_print_numbers(void)
 		write(1, &n, 1);
 		n++;
 	}
-	write(1, "\n", 1);
 }
-
 /*
 int	main(void)
 {
