@@ -6,13 +6,23 @@
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 17:06:59 by justin            #+#    #+#             */
-/*   Updated: 2022/05/22 17:08:14 by justin           ###   ########.fr       */
+/*   Updated: 2022/05/23 10:01:29 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
 void ft_ultimate_ft(int *********nbr)
 {
+	int n;
+	int *nbr;
+	int **nbr;
+	int ***nbr;
+	int ****nbr;
+	int *****nbr;
+	int ******nbr;
+	int *******nbr;
+	int ********nbr;
+
 
 }
 

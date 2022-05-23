@@ -6,7 +6,7 @@
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 14:56:39 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/05/22 15:14:14 by justin           ###   ########.fr       */
+/*   Updated: 2022/05/23 11:07:53 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -18,19 +18,19 @@ void	ft_is_negative(int n)
 
 	_n = 'N';
 	p = 'P';
-	if (n < 1)
+	if (n < 0)
 	{		
 		write(1, &_n, 1);
 	}
-	else if (n > 1)
+	else if (n >= 0)
 	{
 		write(1, &p, 1);
 	}
 }
 /*
-int	main(int n)
+int	main(void)
 {
-	ft_is_negative(-1);
+	ft_is_negative(0);
 	return (0);
 }
 */
