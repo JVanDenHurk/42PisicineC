@@ -6,11 +6,12 @@
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 10:55:09 by justin            #+#    #+#             */
-/*   Updated: 2022/05/29 11:29:11 by justin           ###   ########.fr       */
+/*   Updated: 2022/05/29 16:30:45 by justin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
 
 void ft_putchar(char c)
 {
@@ -19,14 +20,24 @@ void ft_putchar(char c)
 
 void ft_putnbr(int nb)
 {
-
+	if(nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if(nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if(nb > 9)
+	{
+		ft_putnbr(nb / 10);
+	}
+	ft_putchar(nb % 10 + '0');
 }
 
 int main(void)
 {
-	int nb;
-
-	nb = 42;
-
-	ft_putnbr(nb);
+	ft_putnbr(-2147483648);
 }
