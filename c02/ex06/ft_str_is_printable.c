@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 13:32:18 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/05/30 14:08:45 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/05/30 15:03:19 by jvan-den          #+#    #+#             */
+/*   Updated: 2022/05/30 15:13:05 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-int	ft_recursive_factorial(int nb)
+int	ft_str_is_printable(char *str)
 {
-	if (nb < 0)	
-		return (0);
-	if (nb == 0 || nb == 1)
-		return (1);
-	return (nb * ft_recursive_factorial(nb - 1));
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] < 32 || str[i] > 126))
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }
 /*
 int main(void)
 {
-	printf("%i", ft_recursive_factorial(5));
+	printf("Is printable: %d\n", ft_str_is_printable("t"));
+	printf("Not printable: %d\n", ft_str_is_printable("€"));
 }
 */

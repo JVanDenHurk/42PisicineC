@@ -6,11 +6,11 @@
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 19:27:32 by justin            #+#    #+#             */
-/*   Updated: 2022/05/30 11:21:51 by jvan-den         ###   ########.fr       */
+/*   Updated: 2022/05/30 16:45:24 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
@@ -29,7 +29,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	}
 	return (dest);
 }
-
+/*
 int main(void)
 {
 	char d[] = "sharkattack";
@@ -40,4 +40,4 @@ int main(void)
 
 	printf("%s", d);
 }
-
+*/
