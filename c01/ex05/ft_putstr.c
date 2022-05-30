@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 19:27:32 by justin            #+#    #+#             */
-/*   Updated: 2022/05/30 11:21:51 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/05/23 20:31:37 by justin            #+#    #+#             */
+/*   Updated: 2022/05/24 16:39:47 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
+//#include <stdio.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	ft_putstr(char *str)
 {
-	unsigned int	i;
+	int	i;
+	int	c;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	c = 0;
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		c = str[i];
+		write(1, &c, 1);
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
 }
-
+/*
 int main(void)
 {
-	char d[] = "sharkattack";
-	char s[] = "penguin";
-	unsigned int n = 5;
+	char s[] = "yes";
 
-	ft_strncpy(d, s, n);
-
-	printf("%s", d);
+	printf("%s\n", s);
 }
-
+*/

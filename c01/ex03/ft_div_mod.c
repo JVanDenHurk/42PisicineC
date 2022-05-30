@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 19:27:32 by justin            #+#    #+#             */
-/*   Updated: 2022/05/30 11:21:51 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/05/23 19:37:52 by justin            #+#    #+#             */
+/*   Updated: 2022/05/24 13:32:08 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+//#include <stdio.h>
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (src[i] != '\0' && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	*div = a / b;
+	*mod = a % b;
 }
-
-int main(void)
+/*
+int	main(void)
 {
-	char d[] = "sharkattack";
-	char s[] = "penguin";
-	unsigned int n = 5;
+	int	a;
+	int	b;
+	int	c;
+	int	d;
 
-	ft_strncpy(d, s, n);
-
-	printf("%s", d);
+	a = 15;
+	b = 2;
+	ft_div_mod(a, b, &c, &d);
+	printf("divide: %d\n", c);
+	printf("Modulo: %d\n", d);
 }
-
+*/

@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 16:17:55 by justin            #+#    #+#             */
-/*   Updated: 2022/05/23 15:13:17 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/05/23 16:25:42 by jvan-den          #+#    #+#             */
+/*   Updated: 2022/05/24 08:56:52 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-void	ft_ft(int *nbr)
-{	
-	*nbr = 42;
-}
-
-/*
-int main(void)
+void	ft_swap(int *a, int *b)
 {
-	int n;
-	int *nbr;
+	int	c;
 
-	n = 24;
-	nbr = &n;
+	c = *a;
+	*a = *b;
+	*b = c;
+}
+/*
+int	main(void)
+{
+	int	a;
+	int	b;
 
-	printf("Pointer before: %d\n", n);
-	ft_ft(nbr);
-	printf("Pointer after: %d\n", n);
+	a = 1;
+	b = 2;
+	ft_swap(&a, &b);
+	printf("%d %d", a, b);
 }
 */

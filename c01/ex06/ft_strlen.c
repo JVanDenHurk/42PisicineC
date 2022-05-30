@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 19:27:32 by justin            #+#    #+#             */
-/*   Updated: 2022/05/30 11:21:51 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/05/23 20:31:37 by justin            #+#    #+#             */
+/*   Updated: 2022/05/24 16:36:15 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_strlen(char *str)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (src[i] != '\0' && i < n)
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (i);
 }
-
+/*
 int main(void)
 {
-	char d[] = "sharkattack";
-	char s[] = "penguin";
-	unsigned int n = 5;
+	char s[] = "yes";
 
-	ft_strncpy(d, s, n);
+	printf("%d\n", ft_strlen(s));
 
-	printf("%s", d);
 }
-
+*/

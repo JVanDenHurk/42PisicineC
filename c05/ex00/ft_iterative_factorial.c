@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 16:17:55 by justin            #+#    #+#             */
-/*   Updated: 2022/05/23 15:13:17 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/05/30 11:35:25 by jvan-den          #+#    #+#             */
+/*   Updated: 2022/05/30 13:31:39 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-void	ft_ft(int *nbr)
-{	
-	*nbr = 42;
-}
+int	ft_iterative_factorial(int nb)
+{
+	int	i;
 
+	i = nb;
+	if (nb < 0)
+	{
+		return (0);
+	}
+	if (nb == 0)
+	{
+		return (1);
+	}
+	while (i > 1)
+	{
+		nb = nb * (i - 1);
+		i--;
+	}
+	return (nb);
+}
 /*
 int main(void)
 {
-	int n;
-	int *nbr;
-
-	n = 24;
-	nbr = &n;
-
-	printf("Pointer before: %d\n", n);
-	ft_ft(nbr);
-	printf("Pointer after: %d\n", n);
+	printf("%i", ft_iterative_factorial(5));
 }
 */
