@@ -6,7 +6,7 @@
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:32:18 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/05/30 14:08:45 by jvan-den         ###   ########.fr       */
+/*   Updated: 2022/05/30 20:16:15 by justin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_recursive_factorial(int nb)
 {
-	if (nb < 0)	
+	if (nb < 0)
 		return (0);
 	if (nb == 0 || nb == 1)
 		return (1);

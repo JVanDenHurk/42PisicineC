@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 14:26:07 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/05/30 20:04:15 by justin           ###   ########.fr       */
+/*   Created: 2022/05/30 20:21:45 by justin            #+#    #+#             */
+/*   Updated: 2022/05/30 21:14:03 by justin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
-int	ft_recursive_power(int nb, int power)
+int	ft_fibonacci(int index)
 {
-	if (power < 0)
+	if (index < 0)
+	{
+		return (-1);
+	}
+	if (index == 0)
 	{
 		return (0);
-	}	
-	if (power == 0)
+	}
+	if (index == 1)
 	{
 		return (1);
 	}
-	if (power > 1)
-	{
-		nb = nb * ft_recursive_power(nb, power -1);
-	}
-	return (nb);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
-/*
+
 int main(void)
 {
-	printf("%d\n", ft_recursive_power(2, 2));
+	printf("%d\n", ft_fibonacci(7));
 }
-*/
