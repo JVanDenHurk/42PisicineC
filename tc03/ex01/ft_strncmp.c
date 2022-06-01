@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/27 20:45:08 by justin            #+#    #+#             */
-/*   Updated: 2022/05/30 09:38:32 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/05/27 10:29:30 by justin            #+#    #+#             */
+/*   Updated: 2022/06/01 09:24:59 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
-	unsigned int	n;
 
 	i = 0;
-	n = 0;
-	while (dest[n] != '\0')
-		n++;
-	while (src[1] != '\0' && i < nb)
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		dest[n] = src[i];
-		i++;
-		n++;
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		else
+			i++;
 	}
-	dest[n] = '\0';
-	return (dest);
+	return (0);
 }
 /*
+#include <stdio.h>
 int main(void)
 {
-	char word1[12] = "start";
-	char word2[] = "end";
+	char s1[] = "compare unsigned int";
+	char s2[] = "comp";
 	int n;
 
-	n = 3;
-	printf("%s", ft_strncat(word1, word2, n));
-	return (0);
+	n = 4;
+	
+	printf("%d\n", ft_strncmp(s1, s2, n));
 }
 */

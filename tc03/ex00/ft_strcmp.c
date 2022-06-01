@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/27 10:29:30 by justin            #+#    #+#             */
-/*   Updated: 2022/05/30 09:36:58 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/05/27 09:24:11 by justin            #+#    #+#             */
+/*   Updated: 2022/06/01 11:35:49 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strcmp(char *s1, char *s2)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		else
+		if (s1[i] == s2[i])
+		{
 			i++;
+		}
+		if (s1[i] < s2[i])
+		{
+			return (-1);
+		}
+		if (s1[i] > s2[i])
+		{
+			return (1);
+		}
 	}
 	return (0);
 }
 /*
-int main(void)
+#include <stdio.h>
+int main()
 {
-	char s1[] = "compare unsigned int";
-	char s2[] = "comp";
-	int n;
-
-	n = 7;
+	char s1[] = "s";
+	char s2[] = "s";
 	
-	printf("%d\n", ft_strncmp(s1, s2, n));
+	printf("%d\n", ft_strcmp(s1, s2));
 }
 */

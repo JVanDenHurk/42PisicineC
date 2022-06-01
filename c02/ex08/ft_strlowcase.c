@@ -6,11 +6,11 @@
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:59:44 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/05/30 16:45:48 by jvan-den         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:12:29 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 char	*ft_strlowcase(char *str)
 {
@@ -22,8 +22,8 @@ char	*ft_strlowcase(char *str)
 		if (str[i] <= 'Z' && str[i] >= 'A')
 		{
 			str[i] += 32;
-			i++;
 		}
+		i++;
 	}
 	return (str);
 }

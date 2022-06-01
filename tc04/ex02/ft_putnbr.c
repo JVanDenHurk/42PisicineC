@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/27 09:24:11 by justin            #+#    #+#             */
-/*   Updated: 2022/05/27 10:59:38 by justin           ###   ########.fr       */
+/*   Created: 2022/05/29 10:55:09 by justin            #+#    #+#             */
+/*   Updated: 2022/06/01 19:52:28 by justin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_putchar(char c)
 {
-	int	i;
+	write(1, &c, 1);
+}
 
-	i = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
 	{
-		if (s1[i] != s2[i])
-			return (s1 - s2);
-		i++;
+		write(1, "-2147483648", 11);
+		return ;
 	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+	}
+	ft_putchar(nb % 10 + '0');
 }
 /*
-int main()
+int main(void)
 {
-	char s1[] = "heeeee";
-	char s2[] = "heeee";
-	
-	printf("%d\n", ft_strcmp(s1, s2));
+	ft_putnbr(-2147483648);
 }
 */
