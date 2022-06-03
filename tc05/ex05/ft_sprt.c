@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_sprt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 11:00:25 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/06/02 11:40:31 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/06/03 10:29:48 by jvan-den          #+#    #+#             */
+/*   Updated: 2022/06/03 10:39:40 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putstr(char *str)
+int	ft_sqrt(int nb)
 {
-	int	i;
-	int	c;
+	int i;
 
 	i = 0;
-	c = 0;
 
-	while(str[i] != '\0')
+	while(i * i <= nb)
 	{
-		c = str[i];
-		write(1, &c, 1);
+		if(i * i == nb && nb <= 46340)
+		{
+			return (i);
+		}
 		i++;
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	ft_putstr(argv[0]);
-
 	return (0);
 }
+/*
+#include <stdio.h>
+int	main()
+{
+	printf("%d", ft_sqrt(4));
+}
+*/
