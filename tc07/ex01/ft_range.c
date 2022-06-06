@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 11:00:25 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/06/06 15:22:49 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/06/06 10:55:56 by jvan-den          #+#    #+#             */
+/*   Updated: 2022/06/06 12:08:26 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putstr(char *str)
+int	*ft_range(int min, int max)
 {
-	int	i;
-	int	c;
+	int *n;
+	int i;
 
-	i = 0;
-	c = 0;
-	while (str[i] != '\0')
+	if(!(n = (int*)malloc(sizeof(*n) * (max - min))));
 	{
-		c = str[i];
-		write(1, &c, 1);
-		i++;
+		return NULL;
 	}
+
+
 }
 
-int	main(int argc, char **argv)
+int	main()
 {
-	argc = 0;
-	ft_putstr(argv[0]);
+	printf("%", ft_range(1, 5)); 
 	return (0);
 }
