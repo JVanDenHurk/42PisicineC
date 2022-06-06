@@ -6,34 +6,48 @@
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 19:17:30 by justin            #+#    #+#             */
-/*   Updated: 2022/06/05 13:50:03 by justin           ###   ########.fr       */
+/*   Updated: 2022/06/06 10:43:32 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_strdup(char *src)
+int ft_strlen(char *s)
 {
 	int	i;
-	char	*dest;
-
 	i = 0;
-	while (src[i] != '\0')
+
+	while (*s++)
 	{
-		dest[i] = src[i];
 		i++;
 	}
-	dest = malloc(sizeof(char) * i + 1);
-	if (dest[i] > src[i])
+	return (i);
+}
+
+char	*ft_strdup(char *src)
+{
+	char *dest;
+	int i;
+
+	i = 0;
+
+	if (!(dest = (char*)malloc(sizeof(char) * ft_strlen(src))))
 	{
-		dest[i] = '\0';
+		return NULL;
 	}
+	while (*src)
+	{
+		dest[i++] = *src++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 int main()
 {
-	char c[] = "yes";
+	char s[] = "yes";
 
-	printf("%s",ft_strdup(c));
+	printf("%s",ft_strdup(s));
+	return (0);
 }

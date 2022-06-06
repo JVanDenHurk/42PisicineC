@@ -6,19 +6,18 @@
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 10:29:48 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/06/03 10:46:36 by jvan-den         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:51:39 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
-	while(i * i <= nb)
+	while (i * i <= nb)
 	{
-		if(i * i == nb && nb <= 46340)
+		if (i * i == nb && nb <= 46340)
 		{
 			return (i);
 		}
