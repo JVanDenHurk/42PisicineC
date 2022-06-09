@@ -6,7 +6,7 @@
 /*   By: justin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 19:17:30 by justin            #+#    #+#             */
-/*   Updated: 2022/06/06 10:43:32 by jvan-den         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:57:08 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int ft_strlen(char *s)
 	int	i;
 	i = 0;
 
-	while (*s++)
+	while (s[i] != '\0')
 	{
 		i++;
 	}
@@ -32,13 +32,17 @@ char	*ft_strdup(char *src)
 
 	i = 0;
 
-	if (!(dest = (char*)malloc(sizeof(char) * ft_strlen(src))))
+	dest = malloc(sizeof(char) * ft_strlen(src));
+	
+	if(dest == NULL)
 	{
 		return NULL;
 	}
-	while (*src)
+
+	while (src[i] != '\0')
 	{
-		dest[i++] = *src++;
+		dest[i] = src[i];
+		i++;
 	}
 	dest[i] = '\0';
 	return (dest);
@@ -46,8 +50,6 @@ char	*ft_strdup(char *src)
 
 int main()
 {
-	char s[] = "yes";
-
-	printf("%s",ft_strdup(s));
+	printf("%s",ft_strdup("yes"));
 	return (0);
 }

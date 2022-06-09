@@ -6,7 +6,7 @@
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:13:26 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/06/08 20:38:57 by justin           ###   ########.fr       */
+/*   Updated: 2022/06/09 09:57:06 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	int	b;
 
 	b = argc - 1;
-	while (b < argc)
+	while (b < argc && b != '\0')
 	{
 		ft_putstr(argv[b]);
 		b--;

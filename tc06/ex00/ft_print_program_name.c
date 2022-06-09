@@ -6,7 +6,7 @@
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 11:00:25 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/06/06 15:22:49 by jvan-den         ###   ########.fr       */
+/*   Updated: 2022/06/08 14:21:39 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int	main(int argc, char **argv)
 {
 	argc = 0;
 	ft_putstr(argv[0]);
+	ft_putstr("\n");
 	return (0);
 }
