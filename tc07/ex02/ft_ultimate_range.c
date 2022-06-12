@@ -1,58 +1,64 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvan-den <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 10:55:56 by jvan-den          #+#    #+#             */
-/*   Updated: 2022/06/12 15:22:36 by jvan-den         ###   ########.fr       */
+/*   Created: 2022/06/12 12:44:18 by jvan-den          #+#    #+#             */
+/*   Updated: 2022/06/12 15:24:53 by jvan-den         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	*ft_range(int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
+	int	size;
 	int	*ptr;
 	int	i;
-	int	s;
 
 	i = 0;
 	if (min >= max)
 	{
-		ptr = NULL;
-		return (ptr);
+		*range = NULL;
+		return (0);
 	}
-	s = max - min;
-	ptr = (int *)malloc(s * sizeof (int));
-	while (i <= s)
+	size = max - min;
+	ptr = (int *)malloc(size * sizeof(int));
+	if (!ptr)
+	{
+		*range = NULL;
+		return (-1);
+	}
+	while (i < size)
 	{
 		ptr[i] = min;
 		i++;
 		min++;
 	}
-	return (ptr);
+	*range = ptr;
+	return (size);
 }
 /*
 #include <stdio.h>
 
-int	main(void)
+int main(void)
 {
 	int	min;
 	int	max;
 	int	size;
 	int	i;
-	int	*result;
+	int	result;
+	int *range;
 
+	i = 0;
 	min = 4;
 	max = 12;
-	size = max - min;
-	i = 0;
-	result = ft_range(min, max);
+	size = ft_ultimate_range(&range, min, max);
 	while (i < size)
 	{
-		printf("%d\n", result[i]);
+		printf("%d\n", range[i]);
 		i++;
 	}
 	return (0);
